@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+<ion-input type="text" [(ngModel)]="input"></ion-input>
+<ion-button (click)="showname()">Search by name</ion-button>
+</ion-item>
+<ion-item>
+  <ion-input type="text" [(ngModel)]="input1"></ion-input>
+  <ion-button (click)="showcity()">Search by city</ion-button>
+  </ion-item>
+
+
+
+<ion-content [fullscreen]="true">
+   <ion-card *ngFor="let i of users" (click)="alertDetail(i.name,i.city,i.age)">
+    <ion-card-header >
+    <ion-card-title>{{i.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-card-subtitle>{{i.city}}</ion-card-subtitle>
+    <ion-card-subtitle>{{i.age}}</ion-card-subtitle>
+  </ion-card-content>
+  </ion-card>
+
+
+   <ion-card  *ngIf="input=='users.name'" >
+    <ion-card-header>
+    <ion-card-title>{{i.name}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-card-subtitle>{{i.city}}</ion-card-subtitle>
+    <ion-card-subtitle>{{i.age}}</ion-card-subtitle>
+  </ion-card-content>
+  </ion-card> 
+  
+
+</ion-content>
