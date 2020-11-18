@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>companyDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-card *ngFor="let o of office">
+    <ion-icon (click)="editItem(o)" name="create"></ion-icon>
+    <ion-icon  name="trash" (click)="deleteItem(o)"></ion-icon>
+  
+  <ion-card-header>
+    <ion-title>{{o.title}}-{{o.type}}</ion-title>
+  </ion-card-header>
+  <ion-subtitle>{{o.location}}</ion-subtitle>
+  <ion-card-content>
+    <!-- <ion-subtitle>{{o.role}}</ion-subtitle> -->
+   
+    {{o.description}} 
+  </ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addOffice()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
